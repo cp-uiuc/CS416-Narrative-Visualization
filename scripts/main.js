@@ -4,21 +4,18 @@ const country_url = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-
 // Navigation logic for the slideshow
 let currentScene = 0;
 const scenes = document.querySelectorAll(".scene");
-const slideBtns = document.querySelectorAll(".slide-btn");
 const tooltip = d3.select("#tooltip");
 
 // set scene 1 as default active
 scenes[0].classList.add("active");
-slideBtns[0].classList.add("active-btn")
 
 const updateScene = () => {
     scenes.forEach((scene, index) => {
         scene.classList.toggle("active", index === currentScene);
     });
 
-    slideBtns.forEach((btn, index) => {
-        btn.classList.toggle("active-btn", index === currentScene);
-    })
+    const currentSceneDisplay = document.getElementById("current-scene-num");
+    currentSceneDisplay.innerText = (currentScene + 1).toString();
 };
 
 const loadSceneScript = (sceneIndex) => {
@@ -45,25 +42,7 @@ document.getElementById("prev").addEventListener("click", () => {
     currentScene = (currentScene - 1 + scenes.length) % scenes.length;
     updateScene();
     loadSceneScript(currentScene);
-
 });
 
-document.getElementById("btn-scene1").addEventListener("click", () => {
-    currentScene = 0;
-    updateScene();
-    loadSceneScript(currentScene);
-});
-
-document.getElementById("btn-scene2").addEventListener("click", () => {
-    currentScene = 1;
-    updateScene();
-    loadSceneScript(currentScene);
-});
-
-document.getElementById("btn-scene3").addEventListener("click", () => {
-    currentScene = 2;
-    updateScene();
-    loadSceneScript(currentScene);
-});
-
+updateScene(currentScene);
 loadSceneScript(currentScene);

@@ -11,6 +11,9 @@ body {
 #nav-buttons {
     align-self: start;
     margin: 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 #slider-container {
@@ -37,10 +40,6 @@ body {
 .active {
   display: block;
   margin: auto;
-}
-
-.active-btn {
-  background-color: #939799;
 }
 
 .tooltip {
