@@ -210,7 +210,7 @@ d3.csv(co2_url).then(data => {
         .attr("text-anchor", "middle")
         .style("font-size", "14px")
         .style("line-height", "1.5") // Improve readability with line height
-        .text("This visualization explores the historical relationship between CO₂ emissions and global temperature change.");
+        .text("This scene explores the historical relationship between CO₂ emissions and global temperature change.");
 
     function mousemove(event) {
         const mouse = d3.pointer(event, this);
