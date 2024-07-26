@@ -16,6 +16,20 @@ body {
     gap: 1rem;
 }
 
+#intro {
+    width: 600px;
+    align-self: top;
+}
+
+#intro-title {
+    font-size: 24px;
+    font-weight: 700; 
+}
+
+#intro-body {
+    line-height: 1.5rem;
+}
+
 #slider-container {
   margin-top: 20px;
   text-align: end;

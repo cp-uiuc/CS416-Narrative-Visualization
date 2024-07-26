@@ -35,13 +35,20 @@ const loadSceneScript = (sceneIndex) => {
 document.getElementById("next").addEventListener("click", () => {
     currentScene = (currentScene + 1) % scenes.length;
     updateScene();
-    loadSceneScript(currentScene);
+    if (currentScene !== 0){
+        loadSceneScript(currentScene);
+    } else {
+        document.querySelectorAll('script[data-scene]').forEach(script => script.remove());
+    }
+
 });
 
 document.getElementById("prev").addEventListener("click", () => {
     currentScene = (currentScene - 1 + scenes.length) % scenes.length;
     updateScene();
-    loadSceneScript(currentScene);
+    if (currentScene !== 0){
+        loadSceneScript(currentScene);
+    }
 });
 
 updateScene(currentScene);

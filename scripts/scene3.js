@@ -5,7 +5,7 @@ d3.csv(co2_url).then((data) => {
 
     const margin = { top: 160, right: 80, bottom: 60, left: 150 },
         width = 800 - margin.left - margin.right,
-        height = 700 - margin.top - margin.bottom;
+        height = 600 - margin.top - margin.bottom;
 
     const industryLabels = {
         'other_industry_co2': 'Other Industries',

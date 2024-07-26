@@ -18,7 +18,7 @@ Promise.all([
 
     const margin = { top: 180, right: 150, bottom: 50, left: 200 },
         width = 800 - margin.left - margin.right,
-        height = 700 - margin.top - margin.bottom;
+        height = 600 - margin.top - margin.bottom;
 
     const final_scene2_data = scene2_data.map(d => ({
         ...d,
