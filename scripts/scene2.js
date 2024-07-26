@@ -195,7 +195,7 @@ Promise.all([
         .attr("type", "range")
         .attr("min", 1850)
         .attr("max", 2022)
-        .attr("value", 2022)
+        .attr("value", 1850)
         .attr("step", 1)
         .attr("id", "yearSlider");
 
@@ -210,5 +210,5 @@ Promise.all([
     });
 
     // Initialize with latest year data
-    slider.property("value", 2022).dispatch("input");
+    slider.property("value", 1850).dispatch("input");
 });

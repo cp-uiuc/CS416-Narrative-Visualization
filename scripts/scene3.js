@@ -152,7 +152,7 @@ d3.csv(co2_url).then((data) => {
     }
 
     // Initial update
-    update(2022);
+    update(1850);
 
     // Set up slider interaction
     d3.selectAll("#slider-container-2").remove();
@@ -162,13 +162,13 @@ d3.csv(co2_url).then((data) => {
         .attr("type", "range")
         .attr("min", 1850)
         .attr("max", 2022)
-        .attr("value", 2022)
+        .attr("value", 1850)
         .attr("step", 1)
         .attr("id", "yearSlider");
 
     const yearLabel = d3.select("#slider-container-2").append("span")
         .attr("id", "yearLabel")
-        .text(2022);
+        .text(1850);
 
     slider.on("input", function () {
         const selectedYear = +this.value;
@@ -176,6 +176,5 @@ d3.csv(co2_url).then((data) => {
         update(selectedYear);
     });
 
-    // Initially display the latest year data
-    slider.property("value", 2022).dispatch("input");
+    slider.property("value", 1850).dispatch("input");
 });
